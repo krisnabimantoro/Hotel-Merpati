@@ -16,11 +16,11 @@
 
 <AnchorPane prefHeight="439.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hotelbooking.booking.bookingController">
    <children>
-      <TabPane prefHeight="521.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="595.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Booking">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="493.0" prefWidth="657.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="520.0" prefWidth="600.0">
                      <children>
                         <Label layoutX="52.0" layoutY="20.0" text="Hotel Merpati">
                            <font>
@@ -51,14 +51,14 @@
                               <Label text="Booking Type" />
                               <ComboBox fx:id="cbBooktype" onAction="#selectBook" prefHeight="25.0" prefWidth="215.0" GridPane.columnIndex="1" />
                               <ComboBox fx:id="cbRoomtype" onAction="#selectAction" prefHeight="25.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <TextField fx:id="cbName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="tbName" onKeyTyped="#validateName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <TextField fx:id="tbRoomNumber" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <TextField fx:id="tbLongstay" onKeyTyped="#ttlPrice" prefHeight="29.0" prefWidth="139.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                               <DatePicker fx:id="dpCheckin" prefHeight="29.0" prefWidth="217.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <TextField fx:id="tbPhoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="tbPhoneNumber" onKeyTyped="#validatePhoneNum" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
-                        <GridPane layoutX="53.0" layoutY="365.0" prefHeight="94.0" prefWidth="233.0">
+                        <GridPane layoutX="53.0" layoutY="365.0" prefHeight="126.0" prefWidth="233.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" prefWidth="89.0" />
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="27.0" />
@@ -68,6 +68,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
                               <Label text="Room Price" />
@@ -75,23 +76,27 @@
                               <Label text="Total Price" GridPane.rowIndex="2" />
                               <Label text="Rp." GridPane.columnIndex="1" />
                               <Label text="Rp." GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="Rp." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Rp." GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <Label fx:id="lblPrice" text="0" GridPane.columnIndex="2" />
                               <Label fx:id="lblInclude" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                               <Label fx:id="lblTotalPrice" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="Payment" GridPane.rowIndex="3" />
+                              <Label layoutX="98.0" layoutY="112.0" text="Rp." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="tbPayment" onKeyTyped="#validatePayment" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
-                        <Button fx:id="btnSubmit" layoutX="468.0" layoutY="439.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="77.0" text="Submit" />
+                        <Button fx:id="btnSubmit" layoutX="468.0" layoutY="484.0" mnemonicParsing="false" onAction="#actionSubmit" prefHeight="33.0" prefWidth="77.0" text="Submit" />
+                        <Label fx:id="lblLunas" layoutX="289.0" layoutY="467.0" text="sd" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
           <Tab text="Booking Info">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="511.0" prefWidth="600.0">
                      <children>
                         <TableView fx:id="tvBooking" layoutX="24.0" layoutY="59.0" prefHeight="362.0" prefWidth="556.0" />
-                        <Button layoutX="514.0" layoutY="436.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="66.0" text="Cancel" />
+                        <Button fx:id="btnCancel" layoutX="514.0" layoutY="460.0" mnemonicParsing="false" onAction="#actionCancel" prefHeight="33.0" prefWidth="66.0" text="Cancel" />
                         <Label layoutX="24.0" layoutY="14.0" text="Hotel Merpati">
                            <font>
                               <Font name="Bauhaus 93" size="27.0" />

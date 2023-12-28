@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="506.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hotelbooking.register.registerController">
+<AnchorPane prefHeight="506.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hotelbooking.login.registerController">
     <children>
         <Label layoutX="126.0" layoutY="57.0" text="REGISTER">
             <font>
@@ -44,14 +44,14 @@
             <Label text="Age" GridPane.rowIndex="3" />
             <Label text="Password" GridPane.rowIndex="5" />
             <Label text="Confirm Password" GridPane.rowIndex="6" />
-            <TextField fx:id="tbUsername" GridPane.columnIndex="1" />
+            <TextField fx:id="tbUsername" onKeyTyped="#valUsername" GridPane.columnIndex="1" />
             <TextField fx:id="tbPass" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <PasswordField fx:id="tbConfirmPass" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <ComboBox fx:id="cbGender" prefHeight="25.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <DatePicker fx:id="dpBirthday" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="tbAge" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dpBirthday" onMouseClicked="#valDateBirthday" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tbAge" onKeyTyped="#valAge" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label text="Phone Number" GridPane.rowIndex="4" />
-            <TextField fx:id="tbPhonenumber" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="tbPhonenumber" onKeyTyped="#valPhonenumber" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
     </children>

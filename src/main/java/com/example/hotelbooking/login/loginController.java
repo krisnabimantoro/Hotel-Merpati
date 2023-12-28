@@ -51,6 +51,7 @@ public class loginController {
 
     public void login(String username, String pass){
         boolean cekLogin =false;
+
         try {
             RandomAccessFile raf = new RandomAccessFile(database,"rw");
             System.out.println(ln);
@@ -79,9 +80,20 @@ public class loginController {
 
     }
     public void onActionLogin(ActionEvent actionEvent) throws IOException {
-        countLines();
 
-        login(tbUsername.getText(),tbPassword.getText());
+
+        if (tbUsername.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom username tidak boleh kososng");
+            alert.show();
+        } else if (tbPassword.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom password tidak boleh kososng");
+            alert.show();
+        }else {
+            countLines();
+            login(tbUsername.getText(),tbPassword.getText());
+        }
+
+
 
 
     }
