@@ -1,3 +1,10 @@
-krisna,123,0857
 kri,123,0857
 kris,asda,0857
+sd,sd,ds
+asd,Laki-laki,2023-12-01,dsd,ds,asd
+krisna,Laki-laki,2023-12-09,19,krisna12,085787121093
+kr,Perempuan,2023-12-02,w,w,wqw
+d,Perempuan,2023-12-01,d,d,d
+das,Perempuan,2023-12-01,d,dsa,d
+erw,Laki-laki,2023-12-07,6,8,64
+krisna,Laki-laki,2023-12-09,12,23,123

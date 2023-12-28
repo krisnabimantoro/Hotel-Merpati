@@ -1,9 +1,13 @@
 package com.example.hotelbooking.register;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.io.*;
+import java.time.LocalDate;
 
 public class registerController {
 
@@ -14,10 +18,17 @@ public class registerController {
     public DatePicker dpBirthday;
     public TextField tbAge;
     public TextField tbPhonenumber;
-    public Button btnTes;
+
     File database = new File("C:\\Kuliah\\Semester 3\\Tugas Besar Proglan\\HotelBooking\\src\\main\\java\\com\\example\\hotelbooking\\database\\booking.txt");
 
+    ObservableList<String> jenisKelamin = FXCollections.observableArrayList("Laki-laki","Perempuan");
     public  int ln;
+
+
+    @FXML
+    private void initialize(){
+        cbGender.setItems(jenisKelamin);
+    }
 
     public  void countLines(){
         ln=1;
@@ -30,20 +41,20 @@ public class registerController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
-
     }
-    public void addData(String username, String password, String phoneNumber){
+    public void addData(String username, String password, String phoneNumber, Object gender, String age, LocalDate date){
         try {
             RandomAccessFile raf = new RandomAccessFile(database,"rw");
 
             for (int i = 0; i < ln; i++) {
                 raf.readLine();
             }
-            raf.writeBytes(username+"");
-            raf.writeBytes(","+password+"");
-            raf.writeBytes(","+phoneNumber+"\n");
+            raf.writeBytes(username);
+            raf.writeBytes(","+gender);
+            raf.writeBytes(","+date);
+            raf.writeBytes(","+age);
+            raf.writeBytes(","+phoneNumber);
+            raf.writeBytes(","+password+"\n");
 
 
         } catch (FileNotFoundException e) {
@@ -54,33 +65,9 @@ public class registerController {
     }
     public void onActionLogin(ActionEvent actionEvent) {
         countLines();
-    addData(tbUsername.getText(),tbPass.getText(),tbPhonenumber.getText());
+        addData(tbUsername.getText(),tbPass.getText(),tbPhonenumber.getText(),cbGender.getValue(),tbAge.getText(),dpBirthday.getValue());
     }
 
-    public void login(String username, String pass){
-
-        try {
-            RandomAccessFile raf = new RandomAccessFile(database,"rw");
-            System.out.println(ln);
-            String line;
-            while ((line = raf.readLine())!=null){
-                String[] data = line.split(",");
-                if (username.equals(data[0].trim())&&pass.equals(data[1].trim())){
-                    System.out.println("login succes");
-                }else{
-                    System.out.println("login gagal");
-                }
-            }
 
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    public void cekLogin(ActionEvent actionEvent) {
-        countLines();
-        login(tbUsername.getText(),tbPass.getText());
-    }
 }
