@@ -71,11 +71,12 @@ public class loginController {
             throw new RuntimeException(e);
         }
        if (cekLogin!=true) {
+           Alert alert = new Alert(Alert.AlertType.INFORMATION, "Username atau passworrd salah");
+           alert.show();
             tbPassword.clear();
             tbUsername.clear();
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Username atau passworrd salah");
-            alert.show();
+
         }
 
     }
@@ -83,10 +84,10 @@ public class loginController {
 
 
         if (tbUsername.getText().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom username tidak boleh kososng");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom username tidak boleh kosong");
             alert.show();
         } else if (tbPassword.getText().isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom password tidak boleh kososng");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom password tidak boleh kosong");
             alert.show();
         }else {
             countLines();

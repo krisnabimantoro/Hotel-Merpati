@@ -97,8 +97,8 @@ public class bookingController {
         }
     }
 
-    public void ttlPrice(KeyEvent keyEvent) {
-
+    //penamaan function ttlPrice diketahui sumber awal dari mana, lebih baik gunakan validateNamaobject
+    public void validateTbLongstay(KeyEvent keyEvent) {
         if (!tbLongstay.getText().matches("^[0-9]+$")){
             Alert alert = new Alert(Alert.AlertType.INFORMATION,"Hanya boleh input angka");
             alert.show();
@@ -135,7 +135,7 @@ public class bookingController {
         }else if (tbLongstay.getText().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom long stay tidak boleh kosong");
             alert.show();
-        } else if (lunas==false) {
+        } else if (!lunas) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION,"Uang anda tidak mencukupi");
             alert.show();
         } else{
@@ -152,6 +152,7 @@ public class bookingController {
 
             bookingDataList.add(new bookingData(breakfast, name, phoneNumber, typeRoom, numberRoom, checkIn, longStay, totalPrice, payment));
 
+
             clear();
         }
     }
@@ -166,6 +167,7 @@ public class bookingController {
         lblInclude.setText(String.valueOf(0));
         lblPrice.setText(String.valueOf(0));
         lblTotalPrice.setText(String.valueOf(0));
+
     }
 
     public void actionCancel(ActionEvent actionEvent) {

@@ -43,7 +43,7 @@
                               <ComboBox fx:id="cbRoomtype" onAction="#selectAction" prefHeight="25.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <TextField fx:id="tbName" onKeyTyped="#validateName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <TextField fx:id="tbRoomNumber" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <TextField fx:id="tbLongstay" onKeyTyped="#ttlPrice" prefHeight="29.0" prefWidth="139.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField fx:id="tbLongstay" onKeyTyped="#validateTbLongstay" prefHeight="29.0" prefWidth="139.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                               <DatePicker fx:id="dpCheckin" prefHeight="29.0" prefWidth="217.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <TextField fx:id="tbPhoneNumber" onKeyTyped="#validatePhoneNum" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>

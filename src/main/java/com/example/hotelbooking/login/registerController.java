@@ -79,7 +79,7 @@ public class registerController {
     public void onActionLogin(ActionEvent actionEvent) throws IOException {
 
         if(tbUsername.getText().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom username tidak boleh kososng");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom username tidak boleh kosong");
             alert.show();
         }else if(cbGender.getValue()==null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom gender harus dipilih");
@@ -91,13 +91,13 @@ public class registerController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom age tidak boleh kososng");
             alert.show();
         }else if(tbPhonenumber.getText().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom phone number tidak boleh kososng");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom phone number tidak boleh kosong");
             alert.show();
         }else if(tbPass.getText().isEmpty()){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom password tidak boleh kososng");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Kolom password tidak boleh kosong");
             alert.show();
-        }else if(tbConfirmPass.getText().equals(tbPass.getText())==false) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION,"confirm paswrd tidak sama dengan password");
+        }else if(!tbConfirmPass.getText().equals(tbPass.getText())) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION,"confirm password tidak sama dengan password");
             alert.show();
         }else{
             countLines();

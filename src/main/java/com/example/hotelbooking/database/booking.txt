@@ -1,3 +1,4 @@
 
 krisnabmntr,Laki-laki,2004-04-09,19,085787121093,krisnabmntr
 s,Laki-laki,2023-11-28,19,085787121093,s
+d,Perempuan,2023-12-15,12,23,w
