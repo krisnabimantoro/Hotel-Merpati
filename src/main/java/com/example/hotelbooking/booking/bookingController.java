@@ -106,7 +106,7 @@ public class bookingController {
         }else{
 
             longStay = Integer.parseInt(tbLongstay.getText());
-            totalPrice = (roomPrice+bookTypePrice)+longStay;
+            totalPrice = (roomPrice+bookTypePrice)*longStay;
             lblTotalPrice.setText(String.valueOf(totalPrice));
         }
 
