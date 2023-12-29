@@ -116,13 +116,6 @@ public class registerController {
 
     }
 
-    public void valUsername(KeyEvent keyEvent) {
-        if (!tbUsername.getText().matches("^[a-zA-Z' ]+$")){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION,"Tidak boleh input angka dan simbol");
-            alert.show();
-            tbUsername.deletePreviousChar();
-        }
-    }
 
     public void valPhonenumber(KeyEvent keyEvent) {
 
@@ -141,7 +134,5 @@ public class registerController {
         }
     }
 
-    public void valDateBirthday(MouseEvent event) {
 
-    }
 }

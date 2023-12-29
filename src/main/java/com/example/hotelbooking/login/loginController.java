@@ -64,9 +64,9 @@ public class loginController {
                     break;
                 }
             }
-
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            Alert alert = new Alert(Alert.AlertType.ERROR, "File tidak ditemukan");
+            alert.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

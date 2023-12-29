@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="439.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hotelbooking.booking.bookingController">
+<AnchorPane prefHeight="439.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hotelbooking.booking.bookingController">
    <children>
       <TabPane prefHeight="595.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -86,7 +76,7 @@
                            </children>
                         </GridPane>
                         <Button fx:id="btnSubmit" layoutX="468.0" layoutY="484.0" mnemonicParsing="false" onAction="#actionSubmit" prefHeight="33.0" prefWidth="77.0" text="Submit" />
-                        <Label fx:id="lblLunas" layoutX="289.0" layoutY="467.0" text="sd" />
+                        <Label fx:id="lblLunas" layoutX="289.0" layoutY="467.0" />
                      </children>
                   </AnchorPane>
             </content>
